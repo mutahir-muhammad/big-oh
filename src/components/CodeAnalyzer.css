@@ -1,0 +1,93 @@
+.code-input-container {
+    margin: 1.5rem 0;
+  }
+  
+  .code-input {
+    width: 100%;
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    border: 1px solid #333;
+    border-radius: 5px;
+    padding: 1rem;
+    font-family: "Courier New", monospace;
+    resize: vertical;
+  }
+  
+  .code-input:focus {
+    outline: none;
+    border-color: #03e9f4;
+    box-shadow: 0 0 5px rgba(3, 233, 244, 0.5);
+  }
+  
+  .analysis-result {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    background-color: rgba(10, 10, 10, 0.7);
+    border-radius: 5px;
+    border-left: 4px solid #a64dff;
+  }
+  
+  .analysis-result h4 {
+    color: #a64dff;
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .analysis-details {
+    margin-top: 1rem;
+  }
+  
+  .analysis-item {
+    margin-bottom: 1rem;
+  }
+  
+  .analysis-label {
+    font-weight: bold;
+    color: #03e9f4;
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+  
+  .analysis-value {
+    display: block;
+    margin-left: 1rem;
+  }
+  
+  .analyzer-features {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .analyzer-features li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .analyzer-features li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #a64dff;
+  }
+  
+  .example-analysis {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: rgba(10, 10, 10, 0.7);
+    border-radius: 5px;
+  }
+  
+  .example-analysis h4 {
+    color: #a64dff;
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .note {
+    font-style: italic;
+    color: #a0a0a0;
+    margin-bottom: 1rem;
+  }
+  
+  

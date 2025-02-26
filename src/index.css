@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+  font-family: "Satoshi", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #0a0a0a;
+  color: #f0f0f0;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.gradient-heading {
+  background: linear-gradient(90deg, #ff00cc, #3393ff, #00ffa3);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.big-o-heading {
+  font-size: 6rem;
+  text-align: center;
+  margin: 2rem 0;
+  line-height: 1.2;
+}
+
+.section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .big-o-heading {
+    font-size: 4rem;
+  }
+}
+
