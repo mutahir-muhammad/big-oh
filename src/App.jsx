@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import "./App.css"
 import Header from "./components/Header"
 import Navigation from "./components/Navigation"
+import Home from "./components/Home"
 import BigOSection from "./components/BigOSection"
 import BigOmegaSection from "./components/BigOmegaSection"
 import BigThetaSection from "./components/BigThetaSection"
@@ -11,44 +12,25 @@ import Footer from "./components/Footer"
 import { Menu } from "lucide-react"
 
 function App() {
-  console.log("App component is rendering...");
-  const [activeSection, setActiveSection] = useState("bigO")
+  const [activeSection, setActiveSection] = useState("home")
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
-  const [visibleSections, setVisibleSections] = useState({})
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = document.querySelectorAll(".section")
-      const newVisibleSections = {}
-
-      sections.forEach((section) => {
-        const rect = section.getBoundingClientRect()
-        const isVisible = rect.top <= window.innerHeight * 0.75 && rect.bottom >= 0
-        newVisibleSections[section.id] = isVisible
-      })
-
-      setVisibleSections(newVisibleSections)
-    }
-
-    window.addEventListener("scroll", handleScroll)
-    handleScroll() // Call once to check initial state
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
 
   const renderSection = () => {
     switch (activeSection) {
+      case "home":
+        return <Home />
       case "bigO":
-        return <BigOSection isVisible={visibleSections["bigO"]} />
+        return <BigOSection />
       case "bigOmega":
-        return <BigOmegaSection isVisible={visibleSections["bigOmega"]} />
+        return <BigOmegaSection />
       case "bigTheta":
-        return <BigThetaSection isVisible={visibleSections["bigTheta"]} />
+        return <BigThetaSection />
       case "commonComplexities":
-        return <CommonComplexities isVisible={visibleSections["commonComplexities"]} />
+        return <CommonComplexities />
       case "codeAnalyzer":
-        return <CodeAnalyzer isVisible={visibleSections["codeAnalyzer"]} />
+        return <CodeAnalyzer />
       default:
-        return <BigOSection isVisible={visibleSections["bigO"]} />
+        return <Home />
     }
   }
 
@@ -69,10 +51,7 @@ function App() {
           isOpen={isSidebarOpen}
           onClose={() => setIsSidebarOpen(false)}
         />
-        <main className="content">
-          <h1 className="gradient-heading big-o-heading">Big O Notation</h1>
-          {renderSection()}
-        </main>
+        <main className="content">{renderSection()}</main>
       </div>
       <Footer />
     </div>

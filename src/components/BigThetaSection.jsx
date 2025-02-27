@@ -1,8 +1,35 @@
+import { useEffect, useRef } from "react"
 import "./Sections.css"
 
 function BigThetaSection() {
+     const sectionRef = useRef(null);
+    
+      useEffect(() => {
+        const observer = new IntersectionObserver(
+          ([entry]) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          },
+          {
+            root: null,
+            rootMargin: "0px",
+            threshold: 0.1,
+          }
+        );
+    
+        if (sectionRef.current) {
+          observer.observe(sectionRef.current);
+        }
+    
+        return () => {
+          if (sectionRef.current) {
+            observer.unobserve(sectionRef.current);
+          }
+        };
+      }, []);
   return (
-    <div className="section">
+    <div ref={sectionRef} className="section">
       <h2 className="gradient-heading section-title">Big Theta Notation</h2>
       <div className="card">
         <h3 className="neon-text" style={{ color: "#00ffa3" }}>

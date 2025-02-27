@@ -5,8 +5,6 @@ import App from "./App"
 
 console.log("Root element:", document.getElementById("root"));
 console.log("Checking #root:", document.getElementById("root"));
-alert("index.js is running!");
-
 
 const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render(

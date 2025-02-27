@@ -1,9 +1,37 @@
-import React from "react"
+import { useEffect, useRef } from "react"
 import "./Sections.css"
 
-const BigOSection = React.memo(function BigOSection({ isVisible }) {
+function BigOSection() {
+  const sectionRef = useRef(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible")
+        }
+      },
+      {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.1,
+      },
+    )
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current)
+      }
+    }
+  }, [])
+
   return (
-    <div id="bigO" className={`section ${isVisible ? "visible" : ""}`}>
+    <div ref={sectionRef} className="section">
+      <h1 className="gradient-heading big-o-heading">Big O Notation</h1>
       <h2 className="gradient-heading section-title">Understanding Big O</h2>
       <div className="card">
         <h3 className="neon-text" style={{ color: "#00e5ff" }}>
@@ -72,7 +100,7 @@ function findElement(array, element) {
       </div>
     </div>
   )
-})
+}
 
 export default BigOSection
 

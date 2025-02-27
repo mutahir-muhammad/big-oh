@@ -44,7 +44,7 @@
 
 /* Gradient headings */
 .gradient-heading {
-  background: linear-gradient(90deg, #ff00cc, #3393ff, #00ffa3);
+  background: linear-gradient(90deg, #ff991c, #ffdb29, #8d0c0c);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
