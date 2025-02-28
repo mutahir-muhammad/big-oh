@@ -1,131 +1,135 @@
 .home {
-  font-family: "Satoshi", sans-serif;
-  background-color: #0a0a0a;
-  color: #f0f0f0;
-  min-height: 100vh;
-}
-
-.home-header {
-  text-align: center;
-  padding: 4rem 2rem;
-}
-
-.main-title {
-  font-size: 4rem;
-  margin-bottom: 1rem;
-}
-
-.subtitle {
-  font-size: 1.5rem;
-  color: #a0a0a0;
-}
-
-.home-content {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem;
-  z-index: 9999;
-}
-
-.section {
-  margin-bottom: 4rem;
-}
-
-.home-content,
-.section {
-  display: block !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  overflow: visible !important;
-}
-
-.gradient-heading {
-  background: linear-gradient(90deg, #ff00cc, #3393ff, #00ffa3);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  font-weight: 700;
-}
-
-.section-title {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
-
-.card {
-  background-color: rgba(30, 30, 30, 0.7);
-  border-radius: 10px;
-  padding: 1.5rem;
-  margin-bottom: 2rem;
-  box-shadow: 0 0 15px rgba(3, 233, 244, 0.3);
-  transition: all 0.3s ease;
-}
-
-.card:hover {
-  box-shadow: 0 0 25px rgba(3, 233, 244, 0.5);
-}
-
-.neon-text {
-  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px currentColor,
-    0 0 20px currentColor, 0 0 30px currentColor;
-}
-
-.complexity-list {
-  list-style-type: none;
-  padding: 0;
-}
-
-.complexity-list li {
-  margin-bottom: 0.5rem;
-  display: flex;
-  align-items: center;
-}
-
-.complexity-badge {
-  display: inline-block;
-  padding: 0.25rem 0.5rem;
-  border-radius: 15px;
-  font-size: 0.8rem;
-  font-weight: bold;
-  margin-right: 0.5rem;
-}
-
-.complexity-o1 {
-  background-color: #00ff9d;
-  color: #000;
-}
-.complexity-ologn {
-  background-color: #00e5ff;
-  color: #000;
-}
-.complexity-on {
-  background-color: #3393ff;
-  color: #000;
-}
-.complexity-onlogn {
-  background-color: #a64dff;
-  color: #fff;
-}
-.complexity-on2 {
-  background-color: #ff00cc;
-  color: #fff;
-}
-.complexity-o2n {
-  background-color: #ff3860;
-  color: #fff;
-}
-
-@media (max-width: 768px) {
+    font-family: "Satoshi", sans-serif;
+    background-color: #0a0a0a;
+    color: #f0f0f0;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  
+  .home-header {
+    text-align: center;
+    padding: 4rem 2rem;
+  }
+  
   .main-title {
-    font-size: 3rem;
+    font-size: 4rem;
+    margin-bottom: 1rem;
   }
-
+  
   .subtitle {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    color: #a0a0a0;
   }
-
+  
+  .home-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .animated-section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8rem;
+  }
+  
   .section-title {
-    font-size: 2rem;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    align-self: flex-start;
+    transition: transform 0.5s ease;
   }
-}
+  
+  .animated-section:hover .section-title {
+    transform: translateX(-20px);
+  }
+  
+  .section-content {
+    align-self: flex-end;
+    max-width: 70%;
+    transition: transform 0.5s ease;
+  }
+  
+  .animated-section:hover .section-content {
+    transform: translateX(20px);
+  }
+  
+  .gradient-heading {
+    background: linear-gradient(90deg, #ff00cc, #3393ff, #0048ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 700;
+  }
+  
+  .neon-text {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
+  }
+  
+  .complexity-list {
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  
+  .complexity-badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-right: 0.5rem;
+  }
+  
+  .complexity-o1 {
+    background-color: #00ff9d;
+    color: #000;
+  }
+  .complexity-ologn {
+    background-color: #00e5ff;
+    color: #000;
+  }
+  .complexity-on {
+    background-color: #3393ff;
+    color: #000;
+  }
+  .complexity-onlogn {
+    background-color: #a64dff;
+    color: #fff;
+  }
+  .complexity-on2 {
+    background-color: #ff00cc;
+    color: #fff;
+  }
+  .complexity-o2n {
+    background-color: #ff3860;
+    color: #fff;
+  }
+  
+  @media (max-width: 768px) {
+    .main-title {
+      font-size: 3rem;
+    }
+  
+    .subtitle {
+      font-size: 1.2rem;
+    }
+  
+    .section-title {
+      font-size: 2rem;
+    }
+  
+    .section-content {
+      max-width: 100%;
+    }
+  
+    .animated-section,
+    .animated-section:hover .section-title,
+    .animated-section:hover .section-content {
+      transform: none;
+    }
+  }
+  
+  
